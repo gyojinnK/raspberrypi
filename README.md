@@ -43,8 +43,8 @@ sudo service influxdb start
 sudo service influxdb status
 ```
 
+<hr>
 <h3>Influx 명령어</h3>
-
 <li>influx DB 접속</li>
 
 ```
