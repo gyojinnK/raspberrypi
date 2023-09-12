@@ -42,3 +42,54 @@ sudo service influxdb start
 ```
 sudo service influxdb status
 ```
+
+<li>Influx 명령어</li>
+
+<li>influx DB 접속</li>
+
+```
+sudo docker exec -it docker-influxdb-grafana bash
+> influx
+```
+
+<li>DB 생성</li>
+
+```
+> create database testdb
+> use testdb
+```
+
+<li>measurement insert</li>
+
+```
+> insert memory,host=server01,region=korea value=5.5
+> insert memory,host=server02,region=japan value=4.5
+```
+
+<li>measurement 조회</li>
+
+```
+> show measurements
+
+> select * from memory
+
+> select "host", "time", "value" from memory where "host" = 'server01'
+
+(컬럼명은 쌍따옴표, 조건문에 비교문자열은 홑따옴표)
+```
+ 
+
+<li>measurement insert(2)</li>
+
+```
+> insert memory,host=server03,name=alicek106 value=6.5
+> select * from memory
+```
+
+<li>태그키 조회</li>
+
+```
+> show tag keys
+> show field keys
+```
+ 
