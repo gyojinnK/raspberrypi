@@ -17,3 +17,5 @@ GPIO.add_event_detect(14, GPIO.FALLING, callback=interrupt_fired)
 while(True):
     time.sleep(1)
     print("Timer Fired")
+
+
