@@ -93,4 +93,38 @@ sudo docker exec -it docker-influxdb-grafana bash
 > show tag keys
 > show field keys
 ```
- 
+
+<hr>
+
+<h3>Grafana Istallation</h3>
+<li>Repository의 GPG key를 더하기</li>
+
+```
+wget -q -O - https://packages.grafana.com/gpg.key | sudo apt-key add -
+```
+
+<li>Repository 더하기</li>
+
+```
+echo "deb https://packages.grafana.com/oss/deb stable main" | sudo tee -a /etc/apt/sources.list.d/grafana.list
+```
+
+<li>프로그램 설치</li>
+
+```
+sudo apt update
+sudo apt install grafana
+```
+
+<li>프로그램 실행</li>
+
+```
+sudo service grafana-server start
+```
+
+<li>influx import with python</li>
+
+```
+sudo pip3 install influxdb
+```
+
